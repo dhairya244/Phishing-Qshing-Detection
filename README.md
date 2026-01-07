@@ -18,6 +18,15 @@ Phishing attacks are one of the most common online threats where attackers trick
 
 ---
 
+---
+
+## 🛠️ **Flow**
+
+![Flow](https://github.com/user-attachments/assets/0777b365-3a77-4eef-b947-6f0b8cdc24f7)
+
+
+---
+
 ## 🧠 Features
 
 - 🔍 **Machine Learning Based Detection** — Uses features from URLs and web patterns to classify phishing threats.
