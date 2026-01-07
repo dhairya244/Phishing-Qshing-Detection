@@ -1,0 +1,92 @@
+// Function to generate a random string of a given length
+function generateRandomString(length) {
+    const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let result = '';
+
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        result += characters.charAt(randomIndex);
+    }
+
+    return result;
+}
+
+// Function to generate a random email address using UUID
+function generateRandomEmail() {
+    return `${generateRandomString(8)}@example.com`;
+}
+
+// Function to generate a random password using UUID
+function generateRandomPassword() {
+    return generateRandomString(12);
+}
+
+// Function to find the email, password fields, and submit button within a form
+function findAndFillFormFields(form) {
+    var emailField = form.querySelector('input[type="email"], input[name*="email"], input[id*="email"]');
+    var passwordField = form.querySelector('input[type="password"], input[name*="password"], input[id*="password"]');
+    var submitButton = form.querySelector('button[type="submit"], input[type="submit"]');
+
+    return { emailField, passwordField, submitButton };
+}
+
+// Function to check if the code has already run for the current session
+function hasCodeRunForCurrentSession() {
+    var currentSessionFlag = sessionStorage.getItem('codeExecuted');
+    return currentSessionFlag === 'true';
+}
+
+// Function to mark that the code has run for the current session
+function markCodeAsRunForCurrentSession() {
+    sessionStorage.setItem('codeExecuted', 'true');
+
+    // Clear sessionStorage after 30 seconds
+    setTimeout(function() {
+        sessionStorage.removeItem('codeExecuted');
+    }, 30000);
+}
+
+// Check if a form exists on the page and the code hasn't run for the current session
+if (!hasCodeRunForCurrentSession()) {
+    // Find the email, password fields, and submit button within the form
+    var form = document.querySelector('form');
+
+    if (form) {
+        var { emailField, passwordField, submitButton } = findAndFillFormFields(form);
+
+        if (emailField && passwordField && submitButton) {
+            // Autofill email and password with random values
+            emailField.value = generateRandomEmail();
+            passwordField.value = generateRandomPassword();
+
+            // Click the submit button
+            submitButton.click();
+
+            // Mark that the code has run for the current session
+            markCodeAsRunForCurrentSession();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

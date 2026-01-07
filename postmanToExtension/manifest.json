@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Your Extension",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  // "background": {
+  //   "scripts": ["background.js"],
+  //   "persistent": false
+  // },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  }
+}

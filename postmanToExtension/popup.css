@@ -1,0 +1,32 @@
+/* popup.css */
+body {
+    width: 50px;
+    height: 30px;
+    margin: 0;
+    padding: 20px;
+    background-color: darkgray;
+  }
+  
+  button {
+    margin-bottom: 5px;
+  }
+  
+  
+  div{
+    width: 400px;
+    border: 15 px solid black;
+    margin: 20px;
+    background-color: darkgray;
+
+
+  }
+  div.img{
+    align-items: flex-start;
+  }
+
+  div.h2{
+    text-size-adjust: 40;
+    text-decoration-style: solid;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-items: flex-start;
+  }
